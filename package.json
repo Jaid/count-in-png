@@ -2,8 +2,13 @@
   "name": "count-in-png",
   "version": "0.1.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Jaid/count-in-png.git"
+  },
   "exports": {
     ".": {
+      "types": "./src/main.ts",
       "default": "./src/main.ts"
     }
   },
@@ -11,12 +16,8 @@
     "#src/*": "./src/*",
     "#root/*": "./*"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Jaid/count-in-png.git"
-  },
   "scripts": {
-    "test": "bun test --max-concurrency 1"
+    "test": "bun test --max-concurrency 1 ./test"
   },
   "devDependencies": {
     "bun-types": "^1.3.14",
