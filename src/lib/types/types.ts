@@ -25,9 +25,13 @@ export type Pixel = {
 }
 
 /** CSS-style hex color string such as `f0a`, `#f0af`, `ff00aa` or `#ff00aaff` */
-export type StringPredicate = string
+export type StringPredicate = ColorString8
 
 /** function that receives a pixel descriptor and its linear index; return `true` to count it */
 export type FunctionPredicate = (pixel: Pixel, index: number) => boolean
 
 export type Predicate = FunctionPredicate | StringPredicate
+
+type HexChar = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | 'a' | 'A' | 'b' | 'B' | 'c' | 'C' | 'd' | 'D' | 'e' | 'E' | 'f' | 'F'
+
+type ColorString8 = `#${HexChar}${HexChar}${HexChar}${HexChar}${HexChar}${HexChar}${HexChar}${HexChar}`
